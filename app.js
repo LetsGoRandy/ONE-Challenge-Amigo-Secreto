@@ -52,3 +52,15 @@ function sortearAmigo() {
 
     exibirResultado(resultado);
 }
+
+// Função para exibir o resultado do sorteio
+function exibirResultado(resultado) {
+    const resultadoContainer = document.getElementById('resultado');
+    resultadoContainer.innerHTML = '';
+
+    resultado.forEach(item => {
+        const listItem = document.createElement('li');
+        listItem.textContent = item;
+        resultadoContainer.appendChild(listItem);
+    });
+}
