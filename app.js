@@ -24,3 +24,15 @@ function adicionarAmigo() {
     input.value = '';
     input.focus();
 }
+
+// Função para atualizar a lista de participantes na tela
+function atualizarListaAmigos() {
+    const listaAmigos = document.getElementById('listaAmigos');
+    listaAmigos.innerHTML = '';
+
+    amigos.forEach(amigo => {
+        const listItem = document.createElement('li');
+        listItem.textContent = amigo;
+        listaAmigos.appendChild(listItem);
+    });
+}
