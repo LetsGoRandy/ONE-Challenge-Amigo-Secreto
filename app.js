@@ -36,3 +36,19 @@ function atualizarListaAmigos() {
         listaAmigos.appendChild(listItem);
     });
 }
+
+// Função para sortear o amigo secreto
+function sortearAmigo() {
+    if (amigos.length < 2) {
+        alert('Adicione pelo menos dois participantes para realizar o sorteio.');
+        return;
+    }
+
+    const shuffledAmigos = [...amigos].sort(() => Math.random() - 0.5);
+    const resultado = shuffledAmigos.map((amigo, index) => {
+        const nextIndex = (index + 1) % shuffledAmigos.length;
+        return `${amigo} tirou ${shuffledAmigos[nextIndex]}`;
+    });
+
+    exibirResultado(resultado);
+}
